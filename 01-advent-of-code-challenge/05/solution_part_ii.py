@@ -20,7 +20,7 @@ with open('input4.txt',encoding="utf-8", mode='r') as tabela:
     part1.append(aux.copy())
   #print(part1)
   for x in steps:
-    for y in range(x['move']):
-        part1[x['to']-1].insert(0, part1[x['from']-1].pop(0))
+    for y in reversed(range(x['move'])):
+      part1[x['to']-1].insert(0, part1[x['from']-1].pop(y))
   for x in range(9):
     print(part1[x][0])
